@@ -64,6 +64,7 @@ public class RestaurantMenu extends Application {
         launch(args);
     }
 }
+```
 
 - Code Explanation (Step-by-Step)
 1. Imports
@@ -85,12 +86,14 @@ Label, Button, CheckBox: UI elements.
 VBox: A vertical layout manager.
 
 Stage: Represents the main window.
+```
 
 2. Class Definition
 java:
 ```java
 public class RestaurantMenu extends Application {
 We extend the Application class so that the JavaFX runtime can launch our interface.
+```
 
 3. The start() Method
 java:
@@ -98,6 +101,7 @@ java:
 public void start(Stage stage)
 This method is automatically called when the program starts.
 It receives a Stage object — the main window of our application.
+```
 
 4. UI Components
 java:
@@ -110,6 +114,7 @@ CheckBox drink = new CheckBox("Drink - 300 DA");
 Button orderButton = new Button("Calculate Total");
 Label result = new Label();
 We create a label for the title, four menu items (checkboxes), a button, and a result label.
+```
 
 5. Button Action
 java:
@@ -122,13 +127,12 @@ orderButton.setOnAction(e -> {
     if (drink.isSelected()) total += 300;
     result.setText("Total = " + total + " DA");
 });
+v
+
 When the user clicks the button:
-
-A total variable is initialized to 0.
-
-For each selected dish, the price is added to the total.
-
-The result label is updated with the final amount.
+- A total variable is initialized to 0.
+- For each selected dish, the price is added to the total.
+- The result label is updated with the final amount.
 
 6. Layout and Styling
 java:
@@ -137,6 +141,7 @@ VBox root = new VBox(10, title, pizza, burger, salad, drink, orderButton, result
 root.setStyle("-fx-padding: 20; -fx-alignment: center; -fx-font-size: 14px;");
 VBox arranges components vertically.
 CSS style adds padding, centers everything, and sets font size.
+```
 
 7. Scene and Stage
 java:
@@ -146,6 +151,7 @@ stage.setScene(scene);
 stage.setTitle("Restaurant Menu");
 stage.show();
 We attach the layout (root) to a scene, then set it inside the window (stage) and show it.
+```
 
 8. The main() Method
 java:
@@ -155,6 +161,7 @@ public static void main(String[] args) {
 }
 The program starts here.
 launch() calls the JavaFX runtime and executes the start() method automatically.
+```
 
 🧠 Output Example
 When you run the program, you’ll see:
@@ -171,9 +178,12 @@ Result = 1500 DA
 1. Compile
    ```bash
 javac RestaurantMenu.java
+```
+
 2. Run
    ```bash
 java RestaurantMenu
+```
 ✅ Make sure JavaFX SDK is configured in your IDE or classpath.
 
 🚀 Ideas for Improvement
