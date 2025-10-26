@@ -1,0 +1,46 @@
+%{
+#include <stdio.h>
+%}
+
+/* ---------- Section des Règles ---------- */
+%%
+/* --- Exercice 1 : Opérateurs et Suites --- */
+[+\-*/]                    { printf("Operateur\n"); }
+F+                         { printf("Suite de F\n"); }
+(ab){2,}                   { printf("Deux 'ab' ou plus\n"); }
+^[A-Za-z0-9]{3}$           { printf("Mot de longueur 3\n"); }
+
+/* --- Exercice 2 : Nombres et Identificateurs --- */
+[0-9]+                     { printf("Nombre entier\n"); }
+[0-9]+"."[0-9]+            { printf("Nombre reel\n"); }
+[A-Z][A-Za-z0-9]*          { printf("Identificateur (Majuscule + alphanum)\n"); }
+
+/* --- Exercice 3 : Identificateur spécial --- */
+/* Exemple valides : bART, c22, r44d2, pTR_ple_5 */
+/* Non valides : Z__p, n__2 */
+[a-zA-Z]([A-Za-z0-9_]*[A-Za-z0-9]+)?   { printf("Identificateur special\n"); }
+
+/* --- Exercice 4 : Chaine Pascal --- */
+/* Entre ' ... ' et accepte '' (double quote interne) */
+\'([^']|\'\')*\'           { printf("Chaine Pascal\n"); }
+
+/* --- Exercice 5 : Chaine C --- */
+/* Entre " ... " sans guillemets internes */
+\"[^\"]*\"                 { printf("Chaine C\n"); }
+
+/* --- Exercice Bonus : Numéro Algérien --- */
+0(5|6|7)[0-9]{8}           { printf("Numero Algerien valide\n"); }
+
+/* --- Autres caractères / ignorer --- */
+[ \t\n]+                   { /* ignorer espaces */ }
+.                          { /* ignorer le reste */ }
+%%
+
+/* ---------- Section C : main ---------- */
+int main() {
+    printf("=== LEXICAL ANALYZER (TP1 Compilation) ===\n");
+    printf("Entrez un texte (Ctrl+Z pour finir sous Windows):\n\n");
+    yylex();  // Lance l'analyse lexicale
+    printf("\n=== Fin de l'analyse ===\n");
+    return 0;
+}
