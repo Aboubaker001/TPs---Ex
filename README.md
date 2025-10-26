@@ -98,7 +98,7 @@ git clone https://github.com/Aboubaker001/TPs---Ex.git
 
 ✨ Author / المؤلف
 Name: Moussaoui Aboubaker
-University: [University Name]
+University: El-Oued
 Major: Computer Science / علوم الحاسوب
 Year: 3rd Year Bachelor (L3)
 
