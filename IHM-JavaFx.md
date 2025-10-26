@@ -127,7 +127,7 @@ orderButton.setOnAction(e -> {
     if (drink.isSelected()) total += 300;
     result.setText("Total = " + total + " DA");
 });
-v
+```
 
 When the user clicks the button:
 - A total variable is initialized to 0.
@@ -177,13 +177,13 @@ Result = 1500 DA
 🧩 How to Run
 1. Compile
    ```bash
-javac RestaurantMenu.java
-```
+   javac RestaurantMenu.java
+
 
 2. Run
    ```bash
-java RestaurantMenu
-```
+   java RestaurantMenu
+
 ✅ Make sure JavaFX SDK is configured in your IDE or classpath.
 
 🚀 Ideas for Improvement
@@ -214,5 +214,3 @@ Language: Java (JavaFX)
 
 
 ---
-
-Would you like me to make a **French version** of this README (for your IHM course submission)?
